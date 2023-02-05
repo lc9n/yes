@@ -1,0 +1,1598 @@
+if not game:IsLoaded() then 
+	repeat task.wait() until game:IsLoaded() and game:GetService("Players").LocalPlayer and game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid")
+	task.wait(2.5)
+end
+
+if game:GetService("CoreGui"):FindFirstChild("SG") then
+	return
+end
+
+local SG = Instance.new("ScreenGui")
+local Main = Instance.new("Frame")
+local Topbar = Instance.new("Frame")
+local Title = Instance.new("TextLabel")
+local UIPadding = Instance.new("UIPadding")
+local UIGradient = Instance.new("UIGradient")
+local CmdbarHolder = Instance.new("Frame")
+local Cmdbar = Instance.new("TextBox")
+local Holder = Instance.new("ScrollingFrame")
+local UIListLayout = Instance.new("UIListLayout")
+local Cmd = Instance.new("TextLabel")
+local UIPadding_2 = Instance.new("UIPadding")
+local UIPadding_3 = Instance.new("UIPadding")
+local Detector = Instance.new("Frame")
+local NotifMain = Instance.new("Frame")
+local NotifTopbar = Instance.new("Frame")
+local NotifTitle = Instance.new("TextLabel")
+local UIPadding_4 = Instance.new("UIPadding")
+local UIGradient_2 = Instance.new("UIGradient")
+local TextLabel = Instance.new("TextLabel")
+local Stroke1 = Instance.new("UIStroke")
+local Stroke2 = Instance.new("UIStroke")
+local Gradient1 = Instance.new("UIGradient")
+local Gradient2 = Instance.new("UIGradient")
+SG.Name = "SG"
+SG.Parent = game:GetService("CoreGui")
+SG.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+Main.Name = "Main"
+Main.Parent = SG
+Main.AnchorPoint = Vector2.new(0.995, 1)
+Main.BackgroundColor3 = Color3.fromRGB(16, 16, 16)
+Main.BorderSizePixel = 0
+Main.Position = UDim2.new(0.995, 0, 1.4, 0)
+Main.Size = UDim2.new(0, 190, 0, 250)
+Topbar.Name = "Topbar"
+Topbar.Parent = Main
+Topbar.BackgroundColor3 = Color3.fromRGB(12, 12, 12)
+Topbar.BorderSizePixel = 0
+Topbar.Size = UDim2.new(1, 0, 0, 18)
+Title.Name = "Title"
+Title.Parent = Topbar
+Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Title.BackgroundTransparency = 1.000
+Title.Size = UDim2.new(0, 120, 0, 18)
+Title.Font = Enum.Font.GothamBold
+Title.Text = "IKU COMMANDS"
+Title.TextColor3 = Color3.fromRGB(200, 200, 200)
+Title.TextSize = 11.000
+Title.TextWrapped = true
+Title.TextXAlignment = Enum.TextXAlignment.Left
+UIPadding.Parent = Title
+UIPadding.PaddingLeft = UDim.new(0, 5)
+UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(93, 0, 255)), ColorSequenceKeypoint.new(0.18, Color3.fromRGB(93, 0, 255)), ColorSequenceKeypoint.new(0.46, Color3.fromRGB(115, 0, 255)), ColorSequenceKeypoint.new(0.71, Color3.fromRGB(149, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(213, 0, 255))}
+UIGradient.Rotation = -45
+UIGradient.Parent = Title
+CmdbarHolder.Name = "CmdbarHolder"
+CmdbarHolder.Parent = Main
+CmdbarHolder.BackgroundColor3 = Color3.fromRGB(18, 18, 18)
+CmdbarHolder.BorderSizePixel = 0
+CmdbarHolder.Position = UDim2.new(0, 0, 0.0719999969, 0)
+CmdbarHolder.Size = UDim2.new(0, 190, 0, 20)
+Cmdbar.Name = "Cmdbar"
+Cmdbar.Parent = CmdbarHolder
+Cmdbar.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Cmdbar.BackgroundTransparency = 1.000
+Cmdbar.Size = UDim2.new(0, 190, 0, 20)
+Cmdbar.Font = Enum.Font.GothamBold
+Cmdbar.PlaceholderColor3 = Color3.fromRGB(120, 120, 120)
+Cmdbar.PlaceholderText = "Command Bar [;]"
+Cmdbar.Text = ""
+Cmdbar.TextColor3 = Color3.fromRGB(200, 200, 200)
+Cmdbar.TextSize = 11.000
+Holder.Name = "Holder"
+Holder.Parent = Main
+Holder.AutomaticCanvasSize = Enum.AutomaticSize.Y
+Holder.ScrollBarImageColor3 = Color3.fromRGB(128, 0, 255)
+Holder.Active = true
+Holder.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Holder.BackgroundTransparency = 1.000
+Holder.BorderSizePixel = 0
+Holder.CanvasSize = UDim2.new(0, 0, 1, 0)
+Holder.Position = UDim2.new(0, 0, 0.151999995, 0)
+Holder.Size = UDim2.new(0, 190, 0, 211)
+Holder.ScrollingDirection = Enum.ScrollingDirection.XY
+Holder.BottomImage = ""
+Holder.MidImage = "rbxassetid://158362264"
+Holder.ScrollBarThickness = 2
+Holder.TopImage = ""
+Holder.ZIndex = 5
+UIListLayout.Parent = Holder
+UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout.Padding = UDim.new(0, 3)
+Cmd.Name = "Cmd"
+Cmd.Parent = Holder
+Cmd.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Cmd.BackgroundTransparency = 0.900
+Cmd.BorderSizePixel = 0
+Cmd.Visible = false
+Cmd.Size = UDim2.new(1, 0, 0, 20)
+Cmd.Font = Enum.Font.Gotham
+Cmd.Text = "Cmd Text"
+Cmd.TextColor3 = Color3.fromRGB(200, 200, 200)
+Cmd.TextSize = 12.000
+Cmd.TextXAlignment = Enum.TextXAlignment.Left
+UIPadding_2.Parent = Cmd
+UIPadding_2.PaddingLeft = UDim.new(0, 5)
+UIPadding_3.Parent = Holder
+UIPadding_3.PaddingTop = UDim.new(0, 5)
+Detector.Name = "Detector"
+Detector.Parent = Main
+Detector.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Detector.BackgroundTransparency = 1.000
+Detector.Size = UDim2.new(1, 0, 1, 0)
+Detector.ZIndex = 10
+NotifMain.Visible = false
+NotifMain.Name = "NotifMain"
+NotifMain.Parent = SG
+NotifMain.AnchorPoint = Vector2.new(0.88, 1)
+NotifMain.BackgroundColor3 = Color3.fromRGB(16, 16, 16)
+NotifMain.BorderSizePixel = 0
+NotifMain.Position = UDim2.new(0.88, 0, 1.15, 0)
+NotifMain.Size = UDim2.new(0, 190, 0, 115)
+NotifTopbar.Name = "NotifTopbar"
+NotifTopbar.Parent = NotifMain
+NotifTopbar.BackgroundColor3 = Color3.fromRGB(12, 12, 12)
+NotifTopbar.BorderSizePixel = 0
+NotifTopbar.Size = UDim2.new(1, 0, 0, 14)
+NotifTitle.Name = "NotifTitle"
+NotifTitle.Parent = NotifTopbar
+NotifTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+NotifTitle.BackgroundTransparency = 1.000
+NotifTitle.Size = UDim2.new(0, 120, 0, 14)
+NotifTitle.Font = Enum.Font.GothamBold
+NotifTitle.Text = "NOTIF TITLE"
+NotifTitle.TextColor3 = Color3.fromRGB(200, 200, 200)
+NotifTitle.TextSize = 10.000
+NotifTitle.TextWrapped = true
+NotifTitle.TextXAlignment = Enum.TextXAlignment.Left
+UIPadding_4.Parent = NotifTitle
+UIPadding_4.PaddingLeft = UDim.new(0, 5)
+UIGradient_2.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(93, 0, 255)), ColorSequenceKeypoint.new(0.18, Color3.fromRGB(93, 0, 255)), ColorSequenceKeypoint.new(0.46, Color3.fromRGB(115, 0, 255)), ColorSequenceKeypoint.new(0.71, Color3.fromRGB(149, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(213, 0, 255))}
+UIGradient_2.Rotation = -45
+UIGradient_2.Parent = NotifTitle
+TextLabel.Parent = NotifMain
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.Position = UDim2.new(0.0473684222, 0, 0.18376033, 0)
+TextLabel.Size = UDim2.new(0, 175, 0, 58)
+TextLabel.Font = Enum.Font.Gotham
+TextLabel.Text = "Notif Text"
+TextLabel.TextColor3 = Color3.fromRGB(200, 200, 200)
+TextLabel.TextSize = 13.000
+Stroke1.Parent = Main
+Stroke1.Color = Color3.fromRGB(255, 255, 255)
+Stroke1.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+Stroke2.Parent = NotifMain
+Stroke2.Color = Color3.fromRGB(255, 255, 255)
+Stroke2.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+Gradient1.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(93, 0, 255)), ColorSequenceKeypoint.new(0.18, Color3.fromRGB(93, 0, 255)), ColorSequenceKeypoint.new(0.46, Color3.fromRGB(115, 0, 255)), ColorSequenceKeypoint.new(0.71, Color3.fromRGB(149, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(213, 0, 255))}
+Gradient1.Rotation = 90
+Gradient1.Parent = Stroke1
+Gradient2.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(93, 0, 255)), ColorSequenceKeypoint.new(0.18, Color3.fromRGB(93, 0, 255)), ColorSequenceKeypoint.new(0.46, Color3.fromRGB(115, 0, 255)), ColorSequenceKeypoint.new(0.71, Color3.fromRGB(149, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(213, 0, 255))}
+Gradient2.Rotation = 90
+Gradient2.Parent = Stroke2
+
+spawn(function()
+	while true do 
+		game:GetService("TweenService"):Create(Gradient1, TweenInfo.new(2.6, Enum.EasingStyle.Quart), { Rotation = Gradient1.Rotation + 360 }):Play()
+		game:GetService("TweenService"):Create(UIGradient, TweenInfo.new(1, Enum.EasingStyle.Quad), { Offset = Vector2.new(0, UIGradient.Offset.Y + 1)} ):Play()
+		game:GetService("TweenService"):Create(UIGradient, TweenInfo.new(1, Enum.EasingStyle.Quad), { Rotation = UIGradient.Rotation - 20 } ):Play()
+		task.wait(1.1)
+		game:GetService("TweenService"):Create(UIGradient, TweenInfo.new(2, Enum.EasingStyle.Quad), { Offset = Vector2.new(0, UIGradient.Offset.Y - 1)} ):Play()
+		game:GetService("TweenService"):Create(UIGradient, TweenInfo.new(2, Enum.EasingStyle.Quad), { Rotation = UIGradient.Rotation + 20 } ):Play()
+		task.wait(2.1)
+	end
+end)
+
+local players, rs, rst, ws, uis = game:GetService("Players"), game:GetService("RunService"), game:GetService("ReplicatedStorage"), game:GetService("Workspace"), game:GetService("UserInputService")
+local plr = players.LocalPlayer
+local opening, opened, visible  = false, false, false
+
+local a=rst.MainEvent;local b={"CHECKER_1","TeleportDetect","OneMoreTime"}local c;c=hookmetamethod(game,"__namecall",function(...)local d={...}local self=d[1]local e=getnamecallmethod()local f=getcallingscript()if e=="FireServer"and self==a and table.find(b,d[2])then return end;if not checkcaller()and getfenv(2).crash then hookfunction(getfenv(2).crash,function()end)end;return c(...)end)
+
+local FlySpeed = 3,5
+local Flying_1 = false
+local Flying_2 = false
+local AutoFly_1 = false 
+local AutoFly_2 = false
+local Noclipping = false
+local Reach = false
+local OldFlingPos = Vector3.new(0, 0, 0)
+local Flinging = nil
+local Targeting = nil
+local OldTargetPos = Vector3.new(0, 0, 0)
+local TargetReach = false
+local TargetNoclipping = false
+local Antistomp = false
+local Qtp = false
+local Antislow = false 
+local Autostomp = false
+local Hideuser = false
+local Antigrab = false
+local Esp = false 
+local Cashesp = false
+local Hidecash = false
+local Autodrop = false
+local Knock = nil
+local KnockOldPos = Vector3.new(0, 0, 0)
+
+
+local Commands = {
+	"Fly | [X] NIGGA THIS SHIT KEEPS BREAKING USE FLY2 ITS BETTER",
+	"Fly2 | [X] another fly",
+	"Flyspeed <am> | lol",
+	"Noclip | go trough walls",
+	"Clip | disable noclip",
+	"Reach | hit pple far away",
+	"Unreach | disable reach", 
+	"To <user> | tp to plr", 
+	"View <user> | view user", 
+	"Unview | unview lol", 
+	"Fling <user> | flings", 
+	"Unfling | disable fling", 
+	"Bag <user> | bag plr",
+	"Unbag | unbags u", 
+	"Target <user> | loopkils plr", 
+	"Untarget | stops loopkilling", 
+	"Antistomp | cant get stomped", 
+	"Unantistomp | disable antistomp", 
+	"Nigga | become black", 	
+	"Fullgod | 🤯🤯🤯",
+	"Badgod | shit god (u cant do anything)",
+	"Re | force reset", 
+	"Spin <am> | lol", 
+	"Unspin | disable spin",
+	"Lowgfx | better fps", 
+	"Qtp | [Q] to tp",
+	"Unqtp | disable qtp",
+	"Antislow | stuff doesnt slow u down",
+	"Unantislow | disable antislow",
+	"Cashaura | auto grab cash nearby", 
+	"Uncashaura | disable cashaura", 
+	"Dropped | says how much cash is dropped", 
+	"Autostomp | autostomp lol", 
+	"Unautostomp | disable autostomp", 
+	"Hideuser | hide user lol", 
+	"Unhideuser | disable hideuser", 
+	"Antigrab | pple cant grab u",
+	"Unantigrab | disable antigrab", 
+	"Bank | tp to bank",
+	"Admin | tp to admin", 
+	"Sewers | tp to sewers", 
+	"Train | tp to train", 
+	"Jail | tp to jail", 
+	"Club | tp to club", 
+	"Ufo | tp to ufo", 
+	"Church | tp to church", 
+	"Gas | tp to gas station", 
+	"Buy <rev, db, revammo, dbammo, armor, food, sg, rpg, rocket, flashbang, grenade, fw",
+	"sgammo, flame, flameammo, knife, key>",
+	"Esp | lol", 
+	"Unesp | disable esp", 
+	"Cashesp | lol", 
+	"Uncashesp | disable cashesp", 
+	"Hidecash | hides dropped cash", 
+	"Showcash | shows hidden cash", 
+	"Autodrop | autodrops cash", 
+	"Unautodrop | disables autodrop", 
+	"Copyid <user> | lol", 
+	"Copyuser <display> | lol",
+	"Rj | rejoins server", 
+	"Shop | server hops", 
+	"Knock <user> | knocks player",
+	"Serverinfo | stuff about the server",
+	"Nuke | [V] to stop attempting to buy (will also tp back to old pos)",
+	"Anti Bag | yup.",
+	"Chat Spy | enabled chat",
+}
+
+local RawCommands = {
+	"fly",
+	"fly2",
+	"flyspeed",
+	"noclip",
+	"clip",
+	"reach",
+	"unreach",
+	"to",
+	"view",
+	"unview",
+	"fling",
+	"unfling",
+	"bag",
+	"unbag",
+	"target",
+	"untarget",
+	"antistomp",
+	"unantistomp",
+	"nigga",
+	"fullgod",
+	"badgod",
+	"re",
+	"spin",
+	"unspin",
+	"lowgfx",
+	"qtp",
+	"unqtp",
+	"antislow",
+	"unantislow",
+	"cashaura",
+	"uncashaura",
+	"dropped",
+	"autostomp",
+	"unautostomp",
+	"hideuser",
+	"unhideuser",
+	"antigrab",
+	"unantigrab",
+	"bank",
+	"admin",
+	"sewers",
+	"train",
+	"jail",
+	"club",
+	"ufo",
+	"church",
+	"gas",
+	"buy",
+	"esp",
+	"unesp",
+	"cashesp",
+	"uncashesp",
+	"hidecash",
+	"showcash",
+	"autodrop",
+	"unautodrop",
+	"copyid",
+	"copyuser",
+	"rj",
+	"shop",
+	"knock",
+	"serverinfo",
+	"nuke",
+	"antibag",
+	"chatspy",
+}
+
+
+function Notify(text, title, time)
+	
+	local NewNotif = NotifMain:Clone()
+	NewNotif.Visible = true
+	NewNotif.Parent = SG
+	NewNotif.ZIndex = NewNotif.ZIndex + 1
+	local NewNotifText = NewNotif:FindFirstChild("TextLabel")
+	NewNotifText.TextWrapped = true
+	local NewNotifTitle = NewNotif.NotifTopbar:FindFirstChild("NotifTitle")
+	
+	local Open = game:GetService("TweenService"):Create(NewNotif, TweenInfo.new(0.32, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), { Position = UDim2.new(0.88, 0, 1.03, 0)} )
+	local Close = game:GetService("TweenService"):Create(NewNotif, TweenInfo.new(0.22, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), { Position = UDim2.new(0.88, 0, 1.15, 0)} )
+
+	NewNotifText.Text = text
+	NewNotifTitle.Text = title
+	
+	spawn(function()
+		Open:Play()
+		task.wait(tonumber(time))
+		Close:Play()
+		Close.Completed:Wait()
+		NewNotif:Destroy()
+	end)
+end
+
+
+function GetPlayer(str)
+	local FoundPlayer = nil
+	for i,v in pairs(players:GetChildren()) do
+		if (string.sub(string.lower(v.Name),1,string.len(str))) == string.lower(str) then
+			FoundPlayer = v
+		end
+	end
+	return FoundPlayer
+end
+
+function Open()
+	if opening == false and opened == false then 
+		opening = true 
+		game:GetService("TweenService"):Create(Main, TweenInfo.new(0.32, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), { Position = UDim2.new(0.995, 0, 1, 0) } ):Play()
+		task.wait(0.18)
+		Cmdbar:CaptureFocus()
+		task.wait(0.02)
+		Cmdbar.Text = ""
+		task.wait(0.16)
+		opening = false 
+		opened = true
+	else 
+		Cmdbar:CaptureFocus()
+		task.wait()
+		Cmdbar.Text = ""
+	end
+end
+
+function Close()
+	if opening == false and opened == true then 
+		opening = true 
+		Cmdbar.Text = ""
+		game:GetService("TweenService"):Create(Main, TweenInfo.new(0.42, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), { Position = UDim2.new(0.995, 0, 1.4, 0) } ):Play()
+		task.wait(0.44)
+		opening = false 
+		opened = false 
+	end 
+end
+
+function Fly_1() 
+	repeat task.wait() 
+	until plr and plr.Character and plr.Character:findFirstChild("Head") and plr.Character:findFirstChild("Humanoid")
+	
+	if ws:FindFirstChild("_nigger_") then
+		ws._nigger_:Destroy()
+	end
+	local Core = Instance.new("Part")
+	Core.Name = "_nigger_"
+	Core.Size = Vector3.new(0.05, 0.05, 0.05)
+	Core.CanCollide = false
+	spawn(function()
+		Core.Parent = ws
+		local Weld = Instance.new("Weld", Core)
+		Weld.Part0 = Core
+		Weld.Part1 = plr.Character.Head
+		Weld.C0 = CFrame.new(0, 0, 0)
+	end)
+	ws:WaitForChild("_nigger_")
+	local c = workspace._nigger_
+	Flying_1 = true
+	local keys={a=false,d=false,w=false,s=false}
+	local e1
+	local e2
+	local function start()
+		local pos = Instance.new("BodyPosition",c)
+		local gyro = Instance.new("BodyGyro",c)
+		pos.maxForce = Vector3.new(math.huge, math.huge, math.huge)
+		pos.position = c.Position
+		gyro.maxTorque = Vector3.new(15e15, 15e15, 15e15)
+		gyro.cframe = c.CFrame
+		repeat
+			wait()
+			plr.Character:FindFirstChildWhichIsA("Humanoid").PlatformStand=true
+			local new=gyro.cframe - gyro.cframe.p + pos.position
+			if keys.w then
+				new = new + ws.CurrentCamera.CoordinateFrame.lookVector * FlySpeed
+			end
+			if keys.s then
+				new = new - ws.CurrentCamera.CoordinateFrame.lookVector * FlySpeed
+			end
+			if keys.d then
+				new = new * CFrame.new(FlySpeed,0,0)
+			end
+			if keys.a then
+				new = new * CFrame.new(-FlySpeed,0,0)
+			end
+			pos.position=new.p
+			if keys.w then
+				gyro.cframe = workspace.CurrentCamera.CoordinateFrame*CFrame.Angles(-math.rad(FlySpeed),0,0)
+			elseif keys.s then
+				gyro.cframe = workspace.CurrentCamera.CoordinateFrame*CFrame.Angles(math.rad(FlySpeed),0,0)
+			else
+				gyro.cframe = workspace.CurrentCamera.CoordinateFrame
+			end
+		until Flying_1 == false
+		if gyro then gyro:Destroy() end
+		if pos then pos:Destroy() end
+		Flying_1=false
+		plr.Character:FindFirstChildWhichIsA("Humanoid").PlatformStand=false
+	end
+	e1=plr:GetMouse().KeyDown:connect(function(key)
+		if not c or not c.Parent then Flying_1=false e1:disconnect() e2:disconnect() return end
+		if key=="w" then
+			keys.w=true
+		elseif key=="s" then
+			keys.s=true
+		elseif key=="a" then
+			keys.a=true
+		elseif key=="d" then
+			keys.d=true
+		elseif key=="x" then
+			if Flying_1 == true and Flying_2 == false then
+				Flying_1=false
+				task.wait()
+			else
+				Flying_1=true
+				start()
+			end
+		end
+	end)
+	e2=plr:GetMouse().KeyUp:connect(function(key)
+		if key=="w" then
+			keys.w=false
+		elseif key=="s" then
+			keys.s=false
+		elseif key=="a" then
+			keys.a=false
+		elseif key=="d" then
+			keys.d=false
+		end
+	end)
+	start()
+end
+
+function Fly_2()
+	repeat task.wait() 
+	until plr and plr.Character and plr.Character:findFirstChild("Head") and plr.Character:findFirstChild("Humanoid") 
+	local mouse = plr:GetMouse() 
+	repeat task.wait() until mouse
+	local torso = plr.Character.Head 
+	local Flying_2 = false
+	local deb = true 
+	local ctrl = {f = 0, b = 0, l = 0, r = 0} 
+	local lastctrl = {f = 0, b = 0, l = 0, r = 0} 
+	local maxspeed = 7500
+	local fs = (FlySpeed * 1)
+
+	function Fly() 
+		local bg = Instance.new("BodyGyro", torso) 
+		bg.P = 9e4 
+		bg.maxTorque = Vector3.new(9e9, 9e9, 9e9) 
+		bg.cframe = torso.CFrame 
+		local bv = Instance.new("BodyVelocity", torso) 
+		bv.velocity = Vector3.new(0,0.1,0) 
+		bv.maxForce = Vector3.new(9e9, 9e9, 9e9) 
+		repeat wait() 
+			fs = FlySpeed
+			plr.Character.Humanoid.PlatformStand = true 
+			if ctrl.l + ctrl.r ~= 100000 or ctrl.f + ctrl.b ~= 10000 then 
+				fs = fs+.0+(fs/maxspeed) 
+				if fs > maxspeed then 
+					fs = maxspeed 
+				end 
+			elseif not (ctrl.l + ctrl.r ~= 5 or ctrl.f + ctrl.b ~= 5) and fs ~= 5 then 
+				fs = fs-5
+				if fs > 5 then 
+					fs = -2 
+				end 
+			end 
+			if (ctrl.l + ctrl.r) ~= 5 or (ctrl.f + ctrl.b) ~= 5 then 
+				bv.velocity = ((game.Workspace.CurrentCamera.CoordinateFrame.lookVector * (ctrl.f+ctrl.b)) + ((game.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(ctrl.l+ctrl.r,(ctrl.f+ctrl.b)*.2,0).p) - game.Workspace.CurrentCamera.CoordinateFrame.p))*fs 
+				lastctrl = {f = ctrl.f, b = ctrl.b, l = ctrl.l, r = ctrl.r} 
+			elseif (ctrl.l + ctrl.r) == 5 and (ctrl.f + ctrl.b) == 5 and fs ~= 5 then 
+				bv.velocity = ((game.Workspace.CurrentCamera.CoordinateFrame.lookVector * (lastctrl.f+lastctrl.b)) + ((game.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(lastctrl.l+lastctrl.r,(lastctrl.f+lastctrl.b)*.2,0).p) - game.Workspace.CurrentCamera.CoordinateFrame.p))*fs 
+			else 
+				bv.velocity = Vector3.new(0,0.1,0) 
+			end 
+			bg.cframe = game.Workspace.CurrentCamera.CoordinateFrame * CFrame.Angles(-math.rad((ctrl.f+ctrl.b)*50*fs/maxspeed),0,0) 
+		until not Flying_2 
+		ctrl = {f = 0, b = 0, l = 0, r = 0} 
+		lastctrl = {f = 0, b = 0, l = 0, r = 0} 
+		fs = 5 
+		bg:Destroy() 
+		bv:Destroy() 
+		plr.Character.Humanoid.PlatformStand = false 
+	end 
+	mouse.KeyDown:connect(function(key) 
+		if key:lower() == "x" then 
+			if Flying_2 == true and Flying_1 == false then
+				Flying_2 = false 
+			else
+				Flying_2 = true 
+				Fly() 
+			end 
+		elseif key:lower() == "w" then 
+			ctrl.f = 45
+		elseif key:lower() == "s" then 
+			ctrl.b = -45 
+		elseif key:lower() == "a" then 
+			ctrl.l = -45 
+		elseif key:lower() == "d" then 
+			ctrl.r = 45
+		end 
+	end) 
+	mouse.KeyUp:connect(function(key) 
+		if key:lower() == "w" then 
+			ctrl.f = 0
+		elseif key:lower() == "s" then 
+			ctrl.b = 0
+		elseif key:lower() == "a" then 
+			ctrl.l = 0
+		elseif key:lower() == "d" then 
+			ctrl.r = 0
+		end 
+	end)
+	Fly()
+end
+
+function Buy(item)
+	local oldpos = plr.Character.HumanoidRootPart.Position
+	local items = ws.Ignored.Shop
+	local attempts = 0
+	local name = ""
+	local itemname = "" 
+	
+	if item == "rev" then 
+		name = "[Revolver] - $1300"
+		itemname = "[Revolver]"
+		
+	elseif item == "flashbang" then 
+		name = "[Flashbang] - $550"
+		itemname = "[Flashbang]"
+
+	elseif item == "db" then 
+		name = "[Double-Barrel SG] - $1400"
+		itemname = "[Double-Barrel SG]"
+
+	elseif item == "fw" then 
+		name = "[Firework] - $10000" 
+		itemname = "[Firework]"
+
+	elseif item == "grenade" then 
+		name = "[Grenade] - $700"
+		itemname = "[Grenade]"
+
+	elseif item == "rpg" then 
+		name = "[RPG] - $6000]"
+		itemname = "[RPG]"
+
+	elseif item == "rocket" then 
+		name = "[5 [RPG Ammo] - $1000]"
+		itemname = ""
+
+	elseif item == "revammo" then 
+		name = "12 [Revolver Ammo] - $75"
+		itemname = ""
+		
+	elseif item == "dbammo" then 
+		name = "18 [Double-Barrel SG Ammo] - $60"
+		itemname = ""
+		
+	elseif item == "armor" then 
+		name = "[Medium Armor] - $1600"
+		itemname = ""
+		
+	elseif item == "food" then 
+		name = "[Pizza] - $5"
+		itemname = ""
+		
+	elseif item == "sg" then 
+		name = "[Shotgun] - $1250"
+		itemname = "[Shotgun]"
+		
+	elseif item == "sgammo" then 
+		name = "20 [Shotgun Ammo] - $60"
+		itemname = ""
+		
+	elseif item == "flame" then 
+		name = "[Flamethrower] - $25000"
+		itemname = "[Flamethrower]"
+		
+	elseif item == "flameammo" then 
+		name = "140 [Flamethrower Ammo] - $1550"
+		itemname = ""
+		
+	elseif item == "knife" then 
+		name = "[Knife] - $150"
+		itemname = "[Knife]"
+		
+	elseif item == "key" then 
+		name = "[Key] - $125"
+		itemname = "[Key]"
+
+	end
+	
+	
+	if name ~= "" then 
+		for i,v in pairs(plr.Character:GetChildren()) do 
+			if v:IsA("Tool") then 
+				v.Parent = plr.Backpack
+			end
+		end
+		task.wait()
+		repeat 
+			task.wait(.01)
+			if not plr.Character.Head:FindFirstChild("_buyvel_") then 
+				local vel = Instance.new("BodyVelocity")
+				vel.Name = "_buyvel_"
+				vel.MaxForce = Vector3.new(1e+12, 1e+12, 1e+12)
+				vel.P = 1250
+				vel.Parent = plr.Character.Head
+			end
+			plr.Character.HumanoidRootPart.CFrame = ws.Ignored.Shop[name].Head.CFrame + Vector3.new(math.random(-1,1), -8, math.random(-1,1))
+			fireclickdetector(ws.Ignored.Shop[name].ClickDetector)
+			attempts = attempts + 0.01
+		until plr.Backpack:FindFirstChild(itemname) or attempts >= 1.5
+		task.wait()
+		plr.Character.HumanoidRootPart.CFrame = CFrame.new(oldpos)
+		task.wait() 
+		if plr.Character.Head:FindFirstChild("_buyvel_") then 
+			plr.Character.Head:FindFirstChild("_buyvel_"):Destroy()
+		end
+	end
+end
+
+function chatspy()
+	--This script reveals ALL hidden messages in the default chat
+
+enabled = true --chat "/spy" to toggle!
+spyOnMyself = true --if true will check your messages too
+public = false --if true will chat the logs publicly (fun, risky)
+publicItalics = true --if true will use /me to stand out
+privateProperties = { --customize private logs
+	Color = Color3.fromRGB(0,255,255); 
+	Font = Enum.Font.SourceSansBold;
+	TextSize = 18;
+}
+
+
+local StarterGui = game:GetService("StarterGui")
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer or Players:GetPropertyChangedSignal("LocalPlayer"):Wait() or Players.LocalPlayer
+local saymsg = game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest")
+local getmsg = game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("OnMessageDoneFiltering")
+local instance = (_G.chatSpyInstance or 0) + 1
+_G.chatSpyInstance = instance
+
+local function onChatted(p,msg)
+	if _G.chatSpyInstance == instance then
+		if p==player and msg:lower():sub(1,4)=="/spy" then
+			enabled = not enabled
+			wait(0.3)
+			privateProperties.Text = "{SPY "..(enabled and "EN" or "DIS").."ABLED}"
+			StarterGui:SetCore("ChatMakeSystemMessage",privateProperties)
+		elseif enabled and (spyOnMyself==true or p~=player) then
+			msg = msg:gsub("[\n\r]",''):gsub("\t",' '):gsub("[ ]+",' ')
+			local hidden = true
+			local conn = getmsg.OnClientEvent:Connect(function(packet,channel)
+				if packet.SpeakerUserId==p.UserId and packet.Message==msg:sub(#msg-#packet.Message+1) and (channel=="All" or (channel=="Team" and public==false and Players[packet.FromSpeaker].Team==player.Team)) then
+					hidden = false
+				end
+			end)
+			wait(1)
+			conn:Disconnect()
+			if hidden and enabled then
+				if public then
+					saymsg:FireServer((publicItalics and "/me " or '').."{SPY} [".. p.Name .."]: "..msg,"All")
+				else
+					privateProperties.Text = "{SPY} [".. p.Name .."]: "..msg
+					StarterGui:SetCore("ChatMakeSystemMessage",privateProperties)
+				end
+			end
+		end
+	end
+end
+
+for _,p in ipairs(Players:GetPlayers()) do
+	p.Chatted:Connect(function(msg) onChatted(p,msg) end)
+end
+Players.PlayerAdded:Connect(function(p)
+	p.Chatted:Connect(function(msg) onChatted(p,msg) end)
+end)
+privateProperties.Text = "{SPY "..(enabled and "EN" or "DIS").."ABLED}"
+StarterGui:SetCore("ChatMakeSystemMessage",privateProperties)
+if not player.PlayerGui:FindFirstChild("Chat") then wait(3) end
+local chatFrame = player.PlayerGui.Chat.Frame
+chatFrame.ChatChannelParentFrame.Visible = true
+chatFrame.ChatBarParentFrame.Position = chatFrame.ChatChannelParentFrame.Position+UDim2.new(UDim.new(),chatFrame.ChatChannelParentFrame.Size.Y)
+end
+
+function AcEsp(target)
+	if target and target.Character and target.Character:FindFirstChild("Head") then 
+		if not target.Character.Head:FindFirstChild("_esp_") then 
+			local bg = Instance.new("BillboardGui")
+			bg.StudsOffset = Vector3.new(0, 3.5, 0)
+			bg.Size = UDim2.new(4.5, 0, 1.2, 0)
+			bg.AlwaysOnTop = true 
+			bg.Name = "_esp_"
+			bg.Parent = target.Character.Head
+			local text = Instance.new("TextLabel")
+			text.Text = ("["..target.Name.."]") 
+			text.BackgroundTransparency = 1
+			text.Size = UDim2.new(1, 0, 1, 0)
+			text.TextColor3 = Color3.fromRGB(106, 0, 255)
+			text.Font = Enum.Font.GothamBold
+		end
+	end
+	
+end
+---------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
+
+if not plr.Character:FindFirstChild("FULLY_LOADED_CHAR") then 
+	repeat task.wait() until plr.Character:FindFirstChild("FULLY_LOADED_CHAR")
+end
+
+Notify("Successfully executed, press [ ; ] to open.", "IKU COMMANDS", 8)
+
+
+function Run(cmd1, cmd2)
+	
+ 	spawn(function()
+		Close()
+	end)
+	
+	local c1, c2 = cmd1, nil
+	
+	if cmd2 then 
+		c2 = cmd2
+	end
+	
+	if c1 == "fly" then 
+		if plr.Character.Head:FindFirstChildWhichIsA("BodyGyro") then 
+			plr.Character.Head:FindFirstChildWhichIsA("BodyGyro"):Destroy()
+		end
+		if plr.Character.Head:FindFirstChildWhichIsA("BodyVelocity") then 
+			plr.Character.Head:FindFirstChildWhichIsA("BodyVelocity"):Destroy()
+		end
+		AutoFly_1 = not AutoFly_1
+		AutoFly_2 = false 
+		Flying_2 = false 
+		Flying_1 = true
+		if AutoFly_1 == true then 
+			Fly_1()
+		end
+		
+	elseif c1 == "fly2" then 
+		if workspace:FindFirstChild("_nigger_") then 
+			workspace._nigger_:Destroy()
+		end
+		AutoFly_2 = not AutoFly_2
+		AutoFly_1 = false 
+		Flying_1 = false
+		Flying_2 = true
+		if AutoFly_2 == true then 
+			Fly_2()
+		end
+		
+	elseif c1 == "flyspeed" then 
+		FlySpeed = tonumber(c2)
+		print(FlySpeed)
+		
+	elseif c1 == "noclip" then 
+		Noclipping = true 
+		
+	elseif c1 == "clip" then
+		Noclipping = false
+		
+	elseif c1 == "reach" then 
+		Reach = true 
+		
+	elseif c1 == "unreach" then 
+		Reach = false 
+		
+	elseif c1 == "to" then 
+		local t = GetPlayer(c2)
+		task.wait()
+		plr.Character.HumanoidRootPart.CFrame = t.Character.HumanoidRootPart.CFrame +  t.Character.HumanoidRootPart.CFrame.LookVector * Vector3.new(3,0,3)
+		
+	elseif c1 == "view" then 
+		local t = GetPlayer(c2)
+		task.wait()
+		ws:FindFirstChildWhichIsA("Camera").CameraSubject = t.Character:FindFirstChildWhichIsA("Humanoid")
+		
+	elseif c1 == "unview" then 
+		ws:FindFirstChildWhichIsA("Camera").CameraSubject = plr.Character:FindFirstChildWhichIsA("Humanoid")
+
+	elseif c1 == "fling" then 
+		local t = GetPlayer(c2)
+		OldFlingPos = plr.Character.HumanoidRootPart.Position
+		task.wait()
+		Flinging = t
+		
+		if Flinging ~= nil then 
+			local Loop
+			local loopFunction = function(FlingEnemy)
+				FlingTorso = FlingEnemy.Character:FindFirstChild("HumanoidRootPart")
+				local dis = 3.85
+				local increase = 6
+				if FlingEnemy.Character.Humanoid.MoveDirection.X < 0 then
+					xchange = math.random(-7,-4)
+				elseif FlingEnemy.Character.Humanoid.MoveDirection.X > 0  then
+					xchange = math.random(4,7)
+				else
+					xchange = 0
+				end
+				if FlingEnemy.Character.Humanoid.MoveDirection.Z < 0 then
+					zchange = math.random(-7,-4)
+				elseif FlingEnemy.Character.Humanoid.MoveDirection.Z > 0 then
+					zchange = math.random(4,7)
+				else
+					zchange = 0
+				end          
+				if plr.Character and FlingTorso and FlingEnemy and Flinging.Character:FindFirstChildWhichIsA("Humanoid") then
+					plr.Character:FindFirstChildWhichIsA('Humanoid'):ChangeState(11)
+					plr.Character.HumanoidRootPart.CFrame = CFrame.new(FlingTorso.Position.X + math.random(-dis,dis) + xchange, FlingTorso.Position.Y, FlingTorso.Position.Z + math.random(-dis,dis) + zchange) * CFrame.Angles(math.rad(plr.Character.HumanoidRootPart.Orientation.X + 350),math.rad(plr.Character.HumanoidRootPart.Orientation.Y + 200),math.rad(plr.Character.HumanoidRootPart.Orientation.Z + 240))
+					plr.Character.HumanoidRootPart.Velocity = Vector3.new(500000,500000,500000)
+				end
+				wait(0.05)
+			end
+			local Start = function(FlingEnemy)
+				Loop = rs.Heartbeat:Connect(function()
+					loopFunction(FlingEnemy)
+				end)
+			end
+			local Pause = function()
+				Loop:Disconnect()
+			end
+			Start(Flinging)
+			repeat task.wait() until 
+			Flinging == nil 
+			Pause()
+		end
+	
+	elseif c1 == "chatspy" then
+		chatspy()
+		
+	elseif c1 == "unfling" then 
+		Flinging = nil
+		task.wait()
+		for i = 1,250 do
+			plr.Character:FindFirstChildWhichIsA('Humanoid'):ChangeState(2)
+			plr.Character.PrimaryPart.Velocity = Vector3.new(0,0,0)
+			plr.Character.PrimaryPart.RotVelocity = Vector3.new(0,0,0)
+			plr.Character:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(OldFlingPos) * CFrame.Angles(math.rad(0),math.rad(137.92),math.rad(0))
+			task.wait(0.00001)
+		end
+		
+	elseif c1 == "bag" then 
+		local oldpos = plr.Character.HumanoidRootPart.Position
+		local t = GetPlayer(c2)
+		local bag  =ws.Ignored.Shop["[BrownBag] - $25"].Head
+		task.wait() 
+		
+		repeat 
+			task.wait() 
+			plr.Character.HumanoidRootPart.CFrame = bag.CFrame + Vector3.new(math.random(-1,1), 3, math.random(-1,1))
+			fireclickdetector(bag.Parent.ClickDetector)
+		until plr.Backpack:FindFirstChild("[BrownBag]")
+		task.wait()
+		local tool = plr.Backpack:FindFirstChild("[BrownBag]")
+		repeat 
+			if t.Character and t.Character:FindFirstChild("FULLY_LOADED_CHAR") then 	
+				task.wait() 
+				tool.Parent = plr.Character
+				tool:Activate() 
+				tool:Deactivate() 
+				
+				for i,v in pairs(t.Character:GetChildren()) do 
+					if v:IsA("BasePart") then 
+						firetouchinterest(tool.Handle, v, 0)
+						firetouchinterest(tool.Handle, v, 1)
+					end
+				end
+			end
+		until tool.Parent == nil or not tool
+		task.wait(.1)
+		plr.Character.HumanoidRootPart.CFrame = CFrame.new(oldpos)
+		
+	elseif c1 == "unbag" then 
+		for i,v in pairs(plr.Character:GetChildren()) do 
+			if v.Name == "Christmas_Sock" then 
+				v:Destroy()
+			end
+		end
+
+	elseif c1 == "antibag" then
+		local LocalPlayer = game:GetService("Players").LocalPlayer
+		local char = LocalPlayer.Character
+		char.ChildAdded:Connect(function(sock)
+			if sock:IsA("MeshPart") then do
+					wait(0)
+					sock:Destroy()
+				end
+			end
+		end)
+
+
+	elseif c1 == "target" then 
+		OldTargetPos = plr.Character.HumanoidRootPart.Position
+		Targeting = GetPlayer(c2)
+		Knock = nil
+		TargetNoclipping = true 
+		TargetReach = true 
+
+		
+		
+	elseif c1 == "untarget" then 
+		
+		if plr.Character:FindFirstChild("Combat") then 
+			plr.Character:FindFirstChild("Combat"):Deactivate()
+			plr.Character:FindFirstChild("Combat").Parent = plr.Backpack
+		end
+		
+		for i = 1,25 do 
+			Targeting = nil
+			TargetNoclipping = false 
+			TargetReach = false
+			if plr.Character.Head:FindFirstChild("_vel_") then 
+				plr.Character.Head:FindFirstChild("_vel_"):Destroy()
+			end
+			plr.Character.HumanoidRootPart.CFrame = CFrame.new(OldTargetPos)
+			task.wait(0.01)
+		end
+		
+	elseif c1 == "antistomp" then 
+		Antistomp = true 
+		
+	elseif c1 == "unantistomp" then 
+		Antistomp = false
+
+	elseif c1 == "nuke" then 
+		local plr = game.Players.LocalPlayer
+		local lastpos = plr.Character.HumanoidRootPart.CFrame
+	
+		repeat wait()
+			plr.Character.HumanoidRootPart.CFrame = game.Workspace.Ignored.Shop["[Grenade] - $700"].Head.CFrame
+			fireclickdetector(game.Workspace.Ignored.Shop["[Grenade] - $700"].ClickDetector)
+			until game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.V)
+			plr.Character.HumanoidRootPart.CFrame = lastpos
+	
+			for i, v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+				wait(0.05)
+					spawn(function()
+					if v.Name == "[Grenade]" then
+					v.Parent = plr.Character; v:Activate(); wait(0.1); v:Deactivate(); wait(0.1); v:Activate()
+				end
+			end)
+		end
+
+		
+	elseif c1 == "nigga" then 
+		for i,v in pairs(plr.Character:GetDescendants()) do 
+			if v:IsA("BasePart") and v.Name ~= "HumanoidRootPart" then 
+				v.Color = Color3.fromRGB(86, 36, 36)
+			end
+		end
+		
+	elseif c1 == "fullgod" then 
+		local char=game.Players.LocalPlayer.Character
+		char:FindFirstChildWhichIsA("Humanoid").Health=0
+		for i,v in pairs(char:GetDescendants()) do 
+			if v:IsA("BasePart") then 
+				v:Destroy()
+			end
+		end
+		local nchar=game.Players.LocalPlayer.CharacterAdded:Wait()
+		local sflc=Instance.new("Folder")
+		sflc.Name=("FULLY_LOADED_CHAR")
+		sflc.Parent = nchar
+		repeat wait() until nchar:FindFirstChild("RagdollConstraints")
+		nchar:FindFirstChild("RagdollConstraints"):Destroy()
+		local sval=Instance.new("BoolValue")
+		sval.Parent=nchar
+		sval.Name=("RagdollConstraints")
+		local nnchar=workspace:WaitForChild(game.Players.LocalPlayer.Name)
+		local flc = Instance.new("Folder",game.Players.LocalPlayer.Character)
+		flc.Name=("FULLY_LOADED_CHAR")
+		nnchar.Parent=workspace.Players
+		game.Players.LocalPlayer.Character:WaitForChild("BodyEffects")
+		game.Players.LocalPlayer.Character.BodyEffects.BreakingParts:Destroy()
+		
+	elseif c1 == "badgod" then 
+		plr.Character.BodyEffects["K.O"]:Destroy()
+		
+	elseif c1 == "re" then
+		plr.Character.Humanoid.Health = 0
+		for i,v in pairs(plr.Character:GetDescendants()) do 
+			if v:IsA("BasePart") or v:IsA("Accessory") and v.Name ~= "HumanoidRootPart" then 
+				v:Destroy()
+			end
+		end
+		
+	elseif c1 == "spin" then 
+		
+		if plr.Character.HumanoidRootPart:FindFirstChild("_spin_") then
+			plr.Character.HumanoidRootPart:FindFirstChild("_spin_").AngularVelocity = Vector3.new(0, c2, 0)
+		else 
+			local spin = Instance.new("BodyAngularVelocity")
+			spin.Name = "_spin_"
+			spin.MaxTorque = Vector3.new(0, math.huge, 0)
+			spin.AngularVelocity = Vector3.new(0, c2, 0)
+			spin.Parent = plr.Character.HumanoidRootPart
+		end
+		
+	elseif c1 == "unspin" then 
+		if plr.Character.HumanoidRootPart:FindFirstChild("_spin_") then
+			plr.Character.HumanoidRootPart:FindFirstChild("_spin_"):Destroy()
+		end
+		
+	elseif c1 == "lowgfx" then 
+		loadstring(game:HttpGet("https://github.com/W9K/roblox-scripts/raw/main/fpsshit.lua"))()
+		
+	elseif c1 == "qtp" then 
+		Qtp = true
+		
+	elseif c1 == "unqtp" then 
+		Qtp = false 
+		
+	elseif c1 == "antislow" then 
+		Antislow = true 
+		
+	elseif c1 == "unantislow" then 
+		Antislow = false 
+		
+	elseif c1 == "cashaura" then 
+		Cashaura = true 
+		
+	elseif c1 == "uncashaura" then 
+		Cashaura = false 
+		
+	elseif c1 == "dropped" then 
+		local amount = 0
+		for i,v in pairs(ws.Ignored.Drop:GetChildren()) do
+			if v.Name == "MoneyDrop" then
+				local cash = string.split(v.BillboardGui.TextLabel.Text,"$")[2]
+				if string.match(cash,',') then
+					amount = amount + cash:gsub("%,","")
+				else
+					amount = amount + cash
+				end
+			end
+		end
+		local function checking(amount)
+			amount = tostring(amount)
+			return amount:reverse():gsub("%d%d%d", "%1,"):reverse():gsub("^,", "")
+		end
+		Notify(tostring("$"..checking(amount)), "Dropped", 5)
+		
+	elseif c1 == "autostomp" then 
+		Autostomp = true 
+		
+	elseif c1 == "unautostomp" then 
+		Autostomp = false
+		
+	elseif c1 == "hideuser" then 
+		Hideuser = true 
+		
+		local oldpos = plr.Character.HumanoidRootPart.Position
+		repeat task.wait() until plr.Character.FindFirstChild("FULLY_LOADED_CHAR")
+		task.wait(.1)
+		local mask = ws.Ignored.Shop["[Surgeon Mask] - $25"].Head
+		repeat
+			task.wait() 
+			plr.Character.HumanoidRootPart.CFrame = mask.CFrame + Vector3.new(math.random(-1,1), 3, math.random(-1,1))
+			fireclickdetector(mask.Parent.ClickDetector)
+		until plr.Backpack:FindFirstChild("Mask")
+		task.wait()
+		local item = plr.Backpack:FindFirstChild("Mask")
+		item.Parent = plr.Character
+		item:Activate()
+		repeat task.wait() until plr.Character:FindFirstChild("In-gameMask") and plr.Character:FindFirstChild("In-gameMask").Handle
+		plr.Character:FindFirstChild("In-gameMask").Handle:Destroy()
+		plr.Character.HumanoidRootPart.CFrame = CFrame.new(oldpos)
+		
+	elseif c1 == "unhideuser" then 
+		Hideuser = false 
+		
+	elseif c1 == "antigrab" then 
+		Antigrab = true 
+		
+	elseif c1 == "unantigrab" then 
+		Antigrab = false
+		
+	elseif c1 == "bank" then 
+		plr.Character.HumanoidRootPart.CFrame = CFrame.new(-422.073547, 47.0403328, -284.21048)
+		
+	elseif c1 == "admin" then 
+		plr.Character.HumanoidRootPart.CFrame = CFrame.new(-870.821838, -32.6492119, -651.472595)
+		
+	elseif c1 == "sewers" then 
+		plr.Character.HumanoidRootPart.CFrame = CFrame.new(83.2626801, -26.7500362, -272.082092)
+		
+	elseif c1 == "train" then 
+		plr.Character.HumanoidRootPart.CFrame = CFrame.new(596.813232, 73.8602829, -106.49501)
+		
+	elseif c1 == "jail" then 
+		plr.Character.HumanoidRootPart.CFrame = CFrame.new(-310.208069, 44.7865791, -90.4895782)
+		
+	elseif c1 == "club" then 
+		plr.Character.HumanoidRootPart.CFrame = CFrame.new(-264.622986, 0.0280604139, -423.32373)
+		
+	elseif c1 == "ufo" then 
+		plr.Character.HumanoidRootPart.CFrame = CFrame.new(73.9752808, 138.999954, -645.319153)
+		
+	elseif c1 == "church" then 
+		plr.Character.HumanoidRootPart.CFrame = CFrame.new(205.133865, 23.7549973, -70.5962982)
+		
+	elseif c1 == "gas" then 
+		plr.Character.HumanoidRootPart.CFrame = CFrame.new(564.15863, 47.7799873, -245.962708)
+		
+	elseif c1 == "buy" then 
+		Buy(c2)
+		
+	elseif c1 == "esp" then 
+		Esp = true 
+		
+	elseif c1 == "unesp" then 
+		Esp = false 
+		task.wait() 
+		
+		for i,v in pairs(players:GetChildren()) do 
+			if v and v.Character and v.Character:FindFirstChild("Head") then 
+				if v.Character.Head:FindFirstChild("_esp_") then 
+					v.Character.Head:FindFirstChild("_esp_"):Destroy()
+				end
+			end
+		end
+		
+	elseif c1 == "cashesp" then 
+		Cashesp = true 
+		
+	elseif c1 == "uncashesp" then 
+		Cashesp = false
+		task.wait()
+		for i,v in pairs(ws.Ignored.Drop:GetChildren()) do
+			if v.Name == "MoneyDrop" then
+				v.BillboardGui.AlwaysOnTop = false
+				v.BillboardGui.Size = UDim2.new(0,25,0,25)
+			end
+		end
+		
+	elseif c1 == "hidecash" then 
+		Hidecash = true 
+		
+	elseif c1 == "showcash" then 
+		Hidecash = false 
+		task.wait() 
+		for i,v in next, ws.Ignored.Drop:GetChildren() do 
+			if v.Name == "MoneyDrop" then 
+				v.Transparency = 0
+				for i,v in pairs(v:GetDescendants()) do 
+					if v:IsA("SurfaceGui") or v:IsA("BillboardGui") then 
+						v.Enabled = true
+					end
+				end
+				task.wait(.025)
+			end
+		end
+	elseif c1 == "autodrop" then 
+		Autodrop = true 
+		
+	elseif c1 == "unautodrop" then 
+		Autodrop = false 
+		
+	elseif c1 == "copyid" then 
+		local t = GetPlayer(c2)
+		task.wait()
+		setclipboard(tostring(t.UserId))
+		
+	elseif c1 == "copyuser" then 
+		for i,v in pairs(players:GetChildren()) do
+			if (string.sub(string.lower(v.DisplayName),1,string.len(c2))) == string.lower(c2) then
+				setclipboard(v.Name)
+			end
+		end
+		
+	elseif c1 == "rj" then 
+		game:GetService("TeleportService"):Teleport(game.PlaceId, plr)
+		
+	elseif c1 == "shop" then 
+		local servers = {}
+		for _, v in ipairs(game:GetService("HttpService"):JSONDecode(game:HttpGetAsync("https://games.roblox.com/v1/games/" .. game.PlaceId .. "/servers/Public?sortOrder=Asc&limit=100")).data) do
+			if type(v) == "table" and v.maxPlayers > v.playing and v.id ~= game.JobId then
+				servers[#servers + 1] = v.id
+			end
+		end
+		if #servers > 0 then
+			game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, servers[math.random(1, #servers)])
+		else
+			return Notify("No server found.", "SERVER HOP", 5)
+		end
+		
+	elseif c1 == "knock" then 
+		KnockOldPos = plr.Character.HumanoidRootPart.Position
+		Knock = GetPlayer(c2)
+		Targeting = nil
+		TargetNoclipping = true 
+		TargetReach = true 
+		
+	elseif c1 == "stopknock" then 
+		Knock = nil
+		TargetNoclipping = false 
+		TargetReach = false 
+		if plr.Character.Head:FindFirstChild("_targetvel_") then 
+			plr.Character.Head:FindFirstChild("_targetvel_"):Destroy()
+		end
+		
+	elseif c1 == "serverinfo" then 
+		local players = #players:GetChildren()
+		local ping = (plr:GetNetworkPing() * 1000 * 2)
+		Notify(tostring(players).."\n"..tostring(ping), "SERVER INFO", 5)
+	end
+end
+
+spawn(function()
+repeat task.wait(.1) until plr.Character and plr.Character:FindFirstChild("FULLY_LOADED_CHAR")  
+	plr.Character.BodyEffects.Movement.ChildAdded:Connect(function(c)
+		if Antislow == true then 
+			task.wait()
+			c:Destroy()
+		end
+	end)
+end)
+
+spawn(function()
+	pcall(function()
+		while true and task.wait(.1) do 
+			
+			if Autodrop == true then 
+				rst.MainEvent:FireServer("DropCash", "10000")
+			end
+			
+			if Hidecash == true then 
+				for i,v in next, ws.Ignored.Drop:GetChildren() do 
+					if v.Name == "MoneyDrop" then
+						v.Transparency = 1
+						for i,v in pairs(v:GetDescendants()) do 
+							if v:IsA("SurfaceGui") or v:IsA("BillboardGui") then 
+								v.Enabled = false
+							end
+						end
+						task.wait(.05)
+					end
+				end
+			end
+			
+			
+			if Cashesp == true then 
+				for i,v in pairs(ws.Ignored.Drop:GetChildren()) do
+					if v.Name == "MoneyDrop" then
+						v.BillboardGui.AlwaysOnTop = true
+						v.BillboardGui.Size = UDim2.new(0,25,0,25)
+					end
+				end
+			end
+			
+			if Esp == true then 
+				for i,v in pairs(players:GetChildren()) do 
+					AcEsp()
+				end
+			end
+			
+			if Autostomp == true then 
+				rst.MainEvent:FireServer("Stomp")
+			end
+			
+			if Antigrab == true then 
+				if plr and plr.Character then 
+					if plr.Character:FindFirstChild("GRABBING_CONSTRAINT") then
+						plr.Character:FindFirstChild("GRABBING_CONSTRAINT"):Destroy()
+						task.wait(0.05)
+						plr.Character:FindFirstChildWhichIsA("Humanoid").Sit = true
+						task.wait(.1)
+						plr.Character:FindFirstChildWhichIsA("Humanoid").Sit = false
+					end
+				end
+			end
+			
+			if Cashaura == true then 
+				for i,v in pairs(ws.Ignored.Drop:GetChildren()) do
+					if v:IsA("Part") and v.Name == "MoneyDrop" then
+						if (v.Position - plr.Character.HumanoidRootPart.Position).Magnitude <= 12 then
+							fireclickdetector(v:FindFirstChildWhichIsA("ClickDetector"))
+						end
+					end
+				end
+			end
+			
+			if Reach == true or TargetReach == true then 
+				local success, err = pcall(function()
+					if plr.Character.BodyEffects.Attacking.Value == true then
+						for i,v in pairs(players:GetChildren()) do
+							if v and v.Character and v.Character:FindFirstChild("Humanoid") and v.Character:FindFirstChild("Humanoid").Health ~= 0 then 
+								if (v.Character.HumanoidRootPart.Position - plr.Character.LeftHand.Position).Magnitude <= 50 then
+									if plr.Character:FindFirstChildOfClass("Tool") then
+										if plr.Character:FindFirstChildOfClass("Tool"):FindFirstChild('Handle') then
+											firetouchinterest(plr.Character:FindFirstChildOfClass("Tool").Handle, v.Character.UpperTorso, 0)
+										else
+											firetouchinterest(plr.Character['RightHand'], v.Character.UpperTorso, 0)
+											firetouchinterest(plr.Character['LeftHand'], v.Character.UpperTorso, 0)
+											firetouchinterest(plr.Character['RightFoot'], v.Character.UpperTorso, 0)
+											firetouchinterest(plr.Character['LeftFoot'], v.Character.UpperTorso, 0)
+											firetouchinterest(plr.Character['RightLowerLeg'], v.Character.UpperTorso, 0)
+											firetouchinterest(plr.Character['LeftLowerLeg'], v.Character.UpperTorso, 0)
+										end
+									end
+								end
+							end
+						end
+					end
+				end)
+			end
+		end
+	end)
+end)
+
+
+rs.RenderStepped:Connect(function()
+	
+	if Knock ~= nil then 
+		if plr.Character and plr.Character:FindFirstChild("FULLY_LOADED_CHAR") and Knock and Knock.Character and Knock.Character:FindFirstChild("Humanoid") then 
+			if not plr.Character.Head:FindFirstChild("_targetvel_") then 
+				local vel = Instance.new("BodyVelocity")
+				vel.Name = "_targetvel_"
+				vel.MaxForce = Vector3.new(1e+12, 1e+12, 1e+12)
+				vel.P = 1250
+				vel.Parent = plr.Character.Head
+			end
+			local t = Knock.Character.HumanoidRootPart
+			local tko = Knock.Character.BodyEffects["K.O"]
+			if tko.Value == false then 
+				plr.Character.HumanoidRootPart.CFrame = t.CFrame + Vector3.new(0, -7, 0)
+				if plr.Backpack:FindFirstChild("Combat") then 
+					plr.Backpack:FindFirstChild("Combat").Parent = plr.Character
+				end
+				plr.Character:FindFirstChild("Combat"):Activate()
+			elseif tko.Value == true then 
+				Knock = nil 
+				if plr.Character.Head:FindFirstChild("_targetvel_") then 
+					plr.Character.Head:FindFirstChild("_targetvel_"):Destroy()
+				end
+				TargetNoclipping = false 
+				TargetReach = false 
+				plr.Character.HumanoidRootPart.CFrame = CFrame.new(KnockOldPos)
+			end
+		end
+	end
+	
+	if Targeting ~= nil then 
+		if plr.Character and plr.Character:FindFirstChild("FULLY_LOADED_CHAR") and Targeting and Targeting.Character and Targeting.Character:FindFirstChild("Humanoid") then 
+			if not plr.Character.Head:FindFirstChild("_vel_") then 
+				local vel = Instance.new("BodyVelocity")
+				vel.Name = "_vel_"
+				vel.MaxForce = Vector3.new(1e+12, 1e+12, 1e+12)
+				vel.P = 1250
+				vel.Parent = plr.Character.Head
+			end
+			local t = Targeting.Character.HumanoidRootPart
+			local tko = Targeting.Character.BodyEffects["K.O"]
+			local tdead = Targeting.Character.BodyEffects["Dead"]
+			if tko.Value == false and tdead.Value == false then 
+				plr.Character.HumanoidRootPart.CFrame = t.CFrame + Vector3.new(0, -7, 0)
+				if plr.Backpack:FindFirstChild("Combat") then 
+					plr.Backpack:FindFirstChild("Combat").Parent = plr.Character
+				end
+				plr.Character:FindFirstChild("Combat"):Activate()
+			elseif tko.Value == true and tdead.Value == false then 
+				plr.Character.HumanoidRootPart.CFrame = CFrame.new(Targeting.Character.UpperTorso.Position) + Vector3.new(0,2,0)
+				rst.MainEvent:FireServer("Stomp")
+			elseif tko.Value == true and tdead.Value == true then
+				plr.Character.HumanoidRootPart.CFrame = t.CFrame + Vector3.new(0, -10, 0)
+			end
+		end
+	end
+end)
+
+rs.Stepped:Connect(function()
+	if plr.Character:FindFirstChildWhichIsA("Humanoid") then 
+		
+		if Antistomp == true and plr.Character:FindFirstChild("BodyEffects") then 
+			if plr.Character.BodyEffects["K.O"].Value == true then 
+				plr.Character.Humanoid.Health = 0
+				for i,v in pairs(plr.Character:GetChildren()) do 
+					if v:IsA("BasePart") or v:IsA("Accessory") then 
+						v:Destroy()
+					end
+				end
+			end
+		end
+		
+		if Noclipping == true or TargetNoclipping == true then 
+				for i,v in pairs(plr.Character:GetDescendants()) do 
+					if v:IsA("BasePart") then 
+						v.CanCollide = false
+					end
+				end
+			end
+	end
+end)
+
+plr.CharacterAdded:Connect(function(c)
+	repeat task.wait() until c and c:FindFirstChild("Humanoid") and c:FindFirstChild("Head")
+	
+	if Hideuser == true then 
+		local oldpos = plr.Character.HumanoidRootPart.Position
+		repeat task.wait() until c:FindFirstChild("FULLY_LOADED_CHAR")
+		task.wait(.1)
+		local mask = ws.Ignored.Shop["[Surgeon Mask] - $25"].Head
+		repeat
+			task.wait() 
+			plr.Character.HumanoidRootPart.CFrame = mask.CFrame + Vector3.new(math.random(-1,1), 3, math.random(-1,1))
+			fireclickdetector(mask.Parent.ClickDetector)
+		until plr.Backpack:FindFirstChild("Mask")
+		task.wait()
+		local item = plr.Backpack:FindFirstChild("Mask")
+		item.Parent = plr.Character
+		item:Activate()
+		repeat task.wait() until plr.Character:FindFirstChild("In-gameMask") and plr.Character:FindFirstChild("In-gameMask").Handle
+		plr.Character:FindFirstChild("In-gameMask").Handle:Destroy()
+		plr.Character.HumanoidRootPart.CFrame = CFrame.new(oldpos)
+	end
+	if AutoFly_1 == true and AutoFly_2 == false then 
+		task.wait() 
+		Fly_1()
+	end
+	
+	if AutoFly_2 == true and AutoFly_1 == false then 
+		task.wait() 
+		Fly_2()
+	end
+end)
+
+Cmdbar.FocusLost:Connect(function()
+	local str = Cmdbar.Text:lower():gsub("^%s", ""):split(" ")
+
+	for i,v in pairs(RawCommands) do 
+		if str[1] == v then 
+			Run(str[1], str[2])
+		end
+	end
+	task.wait()
+	Close()
+end)
+
+
+game:GetService("UserInputService").InputBegan:Connect(function(i, p)
+	if not p then 
+		if i.KeyCode == Enum.KeyCode.Semicolon then 
+			Open()
+		end
+		
+		if Qtp == true then 
+			if i.KeyCode == Enum.KeyCode.Q then 
+				plr.Character.HumanoidRootPart.CFrame = plr:GetMouse().Hit * CFrame.Angles(math.rad(0),math.rad(137.92),math.rad(0)) + Vector3.new(0,5,0)
+				task.wait(0.01)
+					plr.Character:FindFirstChildWhichIsA("Humanoid"):ChangeState(Enum.HumanoidStateType.GettingUp)
+					
+				
+			end
+		end
+	end
+end)
+
+
+spawn(function()
+	local CommandsLoaded = 0
+	for i,v in next, Commands do 
+		local NewCmd = Cmd:Clone()
+		NewCmd.Visible = true 
+		NewCmd.Name = v:split(" |")[1]:gsub("<user>", ""):gsub("<full user>", ""):gsub("<display>", ""):gsub("<id>", ""):gsub("<am>", ""):gsub("<item>", "")
+		NewCmd.Parent = Holder
+		NewCmd.Text = ("["..tostring(i).."] "..v:lower())
+		if NewCmd.TextBounds.X >= 188 then 
+			NewCmd.Size = UDim2.new(0, 188, 0, 28)
+			NewCmd.TextWrapped = true
+		else 
+			NewCmd.Size = UDim2.new(0, 188, 0, 20)
+		end
+		
+		CommandsLoaded = CommandsLoaded + 1
+		task.wait()
+	end
+	print(CommandsLoaded.." Commands loaded!")
+	Cmd:Destroy()
+end)
+
+
+Cmdbar.Changed:Connect(function(prop)
+	if prop == "Text" then 
+		if Cmdbar.Text ~= "" then
+			if Cmdbar.Text ~= " " or Cmdbar.Text ~= ";" then 
+				for i,v in pairs(Holder:GetChildren()) do 
+					if v:IsA("TextLabel") then 
+						v.Visible = false
+						if v.Text:gsub("["..i.."]", ""):split(" | ")[1]:gsub("<user>", ""):gsub("<full user>", ""):gsub("<display>", ""):gsub("<id>", ""):gsub("<am>", ""):gsub("<item>", ""):find(Cmdbar.Text) then 
+							v.Visible = true
+						end
+					end
+				 end
+			end
+		else 
+			for i,v in pairs(Holder:GetChildren()) do 
+				if v:IsA("TextLabel") then 
+					v.Visible = true
+				end
+			end
+		end
+	end
+end)
+
+
